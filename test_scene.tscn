@@ -95,7 +95,7 @@ mesh = SubResource("SphereMesh_kntgx")
 skeleton = NodePath("../../Spider2")
 
 [node name="Spider2" parent="." instance=ExtResource("1_vg73f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7561, 5.22084, -30.4549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7228, 5.22085, -18.7882)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Spider2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22412, 0)
