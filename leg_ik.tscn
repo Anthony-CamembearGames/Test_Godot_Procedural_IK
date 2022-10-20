@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://p3gt6unfx014"]
+
+[ext_resource type="PackedScene" uid="uid://cns5ojcufbbkt" path="res://Leg.glb" id="1_5g5o5"]
+[ext_resource type="Script" path="res://IKTarget.gd" id="2_6doip"]
+[ext_resource type="Script" path="res://StepTarget.gd" id="2_8gix5"]
+
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_b7r3x"]
+target_nodepath = NodePath("../../Node/Target")
+tip_nodepath = NodePath("BoneAttachment3D/Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_name = ""
+joint_data/0/bone_index = 0
+joint_data/0/ccdik_axis = 1
+joint_data/0/enable_joint_constraint = false
+joint_data/1/bone_name = ""
+joint_data/1/bone_index = 0
+joint_data/1/ccdik_axis = 2
+joint_data/1/enable_joint_constraint = false
+joint_data/2/bone_name = ""
+joint_data/2/bone_index = 1
+joint_data/2/ccdik_axis = 2
+joint_data/2/enable_joint_constraint = false
+joint_data/3/bone_name = ""
+joint_data/3/bone_index = 2
+joint_data/3/ccdik_axis = 2
+joint_data/3/enable_joint_constraint = false
+
+[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_ltbhr"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification3DCCDIK_b7r3x")
+
+[sub_resource type="SphereMesh" id="SphereMesh_n1yla"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrf6t"]
+albedo_color = Color(0.192157, 1, 0.94902, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_1nqdh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yt3cc"]
+albedo_color = Color(1, 0.333333, 0.321569, 1)
+
+[node name="Leg" instance=ExtResource("1_5g5o5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.61251)
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.94078, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(-2.70502e-08, -7.57754e-08, -0.3362, 0.941791)
+bones/1/rotation = Quaternion(3.15364e-10, 1.53681e-07, -0.314904, 0.949124)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(1.1192e-07, -1.46666e-14, -0.686961, 0.726695)
+modification_stack = SubResource("SkeletonModificationStack3D_ltbhr")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.991514, 0.129922, -0.00453859, -0.129939, -0.991515, 0.00371342, -0.00401763, 0.00427165, 0.999983, 4.17699, 0.215777, 0.0187076)
+bone_name = "Bone.002"
+bone_idx = 2
+
+[node name="Tip" type="Marker3D" parent="Armature/Skeleton3D/BoneAttachment3D" index="0"]
+transform = Transform3D(1, -2.53007e-29, 0, -6.89996e-29, 1, -8.47033e-22, 0, -6.91738e-22, 1, -9.07261e-08, 2.68504, -1.47812e-14)
+
+[node name="StepTarget" type="Marker3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3.49547)
+script = ExtResource("2_8gix5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StepTarget" index="0"]
+mesh = SubResource("SphereMesh_n1yla")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrf6t")
+
+[node name="RayCast3D" type="RayCast3D" parent="StepTarget" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+target_position = Vector3(0, -10, 0)
+collide_with_areas = true
+
+[node name="Node" type="Node" parent="." index="2"]
+
+[node name="Target" type="Marker3D" parent="Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -3.58319)
+script = ExtResource("2_6doip")
+step_target_path = NodePath("../../StepTarget")
+step_distance = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/Target" index="0"]
+mesh = SubResource("SphereMesh_1nqdh")
+surface_material_override/0 = SubResource("StandardMaterial3D_yt3cc")

@@ -1,0 +1,188 @@
+[gd_scene load_steps=12 format=3 uid="uid://1wo5hoydmew1"]
+
+[ext_resource type="PackedScene" uid="uid://p3gt6unfx014" path="res://leg_ik.tscn" id="1_d1l5t"]
+[ext_resource type="Script" path="res://spider.gd" id="1_nr8sn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_utg35"]
+size = Vector3(5, 2.5, 5)
+
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_dp3ey"]
+target_nodepath = NodePath("../../Node/Target")
+tip_nodepath = NodePath("BoneAttachment3D/Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_name = "Bone"
+joint_data/0/bone_index = 0
+joint_data/0/ccdik_axis = 1
+joint_data/0/enable_joint_constraint = false
+joint_data/1/bone_name = "Bone"
+joint_data/1/bone_index = 0
+joint_data/1/ccdik_axis = 2
+joint_data/1/enable_joint_constraint = false
+joint_data/2/bone_name = "Bone.001"
+joint_data/2/bone_index = 1
+joint_data/2/ccdik_axis = 2
+joint_data/2/enable_joint_constraint = false
+joint_data/3/bone_name = "Bone.002"
+joint_data/3/bone_index = 2
+joint_data/3/ccdik_axis = 2
+joint_data/3/enable_joint_constraint = false
+
+[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_676da"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification3DCCDIK_dp3ey")
+
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_w8dob"]
+target_nodepath = NodePath("../../Node/Target")
+tip_nodepath = NodePath("BoneAttachment3D/Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_name = "Bone"
+joint_data/0/bone_index = 0
+joint_data/0/ccdik_axis = 1
+joint_data/0/enable_joint_constraint = false
+joint_data/1/bone_name = "Bone"
+joint_data/1/bone_index = 0
+joint_data/1/ccdik_axis = 2
+joint_data/1/enable_joint_constraint = false
+joint_data/2/bone_name = "Bone.001"
+joint_data/2/bone_index = 1
+joint_data/2/ccdik_axis = 2
+joint_data/2/enable_joint_constraint = false
+joint_data/3/bone_name = "Bone.002"
+joint_data/3/bone_index = 2
+joint_data/3/ccdik_axis = 2
+joint_data/3/enable_joint_constraint = false
+
+[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_1ephw"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification3DCCDIK_w8dob")
+
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_sw0go"]
+target_nodepath = NodePath("../../Node/Target")
+tip_nodepath = NodePath("BoneAttachment3D/Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_name = "Bone"
+joint_data/0/bone_index = 0
+joint_data/0/ccdik_axis = 1
+joint_data/0/enable_joint_constraint = false
+joint_data/1/bone_name = "Bone"
+joint_data/1/bone_index = 0
+joint_data/1/ccdik_axis = 2
+joint_data/1/enable_joint_constraint = false
+joint_data/2/bone_name = "Bone.001"
+joint_data/2/bone_index = 1
+joint_data/2/ccdik_axis = 2
+joint_data/2/enable_joint_constraint = false
+joint_data/3/bone_name = "Bone.002"
+joint_data/3/bone_index = 2
+joint_data/3/ccdik_axis = 2
+joint_data/3/enable_joint_constraint = false
+
+[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_7yog3"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification3DCCDIK_sw0go")
+
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_lnebk"]
+target_nodepath = NodePath("../../Node/Target")
+tip_nodepath = NodePath("BoneAttachment3D/Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_name = "Bone"
+joint_data/0/bone_index = 0
+joint_data/0/ccdik_axis = 1
+joint_data/0/enable_joint_constraint = false
+joint_data/1/bone_name = "Bone"
+joint_data/1/bone_index = 0
+joint_data/1/ccdik_axis = 2
+joint_data/1/enable_joint_constraint = false
+joint_data/2/bone_name = "Bone.001"
+joint_data/2/bone_index = 1
+joint_data/2/ccdik_axis = 2
+joint_data/2/enable_joint_constraint = false
+joint_data/3/bone_name = "Bone.002"
+joint_data/3/bone_index = 2
+joint_data/3/ccdik_axis = 2
+joint_data/3/enable_joint_constraint = false
+
+[sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_4d57r"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification3DCCDIK_lnebk")
+
+[node name="Spider" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.23081)
+script = ExtResource("1_nr8sn")
+fl_leg_path = NodePath("Leg")
+fr_leg_path = NodePath("Leg3")
+bl_leg_path = NodePath("Leg2")
+br_leg_path = NodePath("Leg4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87137, 0)
+mesh = SubResource("BoxMesh_utg35")
+
+[node name="Leg" parent="." instance=ExtResource("1_d1l5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Skeleton3D" parent="Leg/Armature" index="0"]
+modification_stack = SubResource("SkeletonModificationStack3D_676da")
+
+[node name="BoneAttachment3D" parent="Leg/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.955181, 0.296024, -1.55619e-07, -0.296024, -0.955181, -4.8228e-08, -1.62921e-07, 4.12115e-13, 1, 3.54005, 2.28937, 8.30415e-13)
+
+[node name="StepTarget" parent="Leg" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="Target" parent="Leg/Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1.76358)
+
+[node name="Leg2" parent="." instance=ExtResource("1_d1l5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Skeleton3D" parent="Leg2/Armature" index="0"]
+modification_stack = SubResource("SkeletonModificationStack3D_1ephw")
+
+[node name="BoneAttachment3D" parent="Leg2/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.955181, 0.296024, -1.55619e-07, -0.296024, -0.955181, -4.8228e-08, -1.62921e-07, 4.12115e-13, 1, 3.54005, 2.28937, 8.30415e-13)
+
+[node name="StepTarget" parent="Leg2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="Target" parent="Leg2/Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10.2364)
+
+[node name="Leg3" parent="." instance=ExtResource("1_d1l5t")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 2)
+
+[node name="Skeleton3D" parent="Leg3/Armature" index="0"]
+modification_stack = SubResource("SkeletonModificationStack3D_7yog3")
+
+[node name="BoneAttachment3D" parent="Leg3/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.955181, 0.296024, -1.55619e-07, -0.296024, -0.955181, -4.8228e-08, -1.62921e-07, 4.12115e-13, 1, 3.54005, 2.28937, 8.30415e-13)
+
+[node name="StepTarget" parent="Leg3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="Target" parent="Leg3/Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1.76358)
+
+[node name="Leg4" parent="." instance=ExtResource("1_d1l5t")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, -2)
+
+[node name="Skeleton3D" parent="Leg4/Armature" index="0"]
+modification_stack = SubResource("SkeletonModificationStack3D_4d57r")
+
+[node name="BoneAttachment3D" parent="Leg4/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.955181, 0.296024, -1.55619e-07, -0.296024, -0.955181, -4.8228e-08, -1.62921e-07, 4.12115e-13, 1, 3.54005, 2.28937, 8.30415e-13)
+
+[node name="StepTarget" parent="Leg4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="Target" parent="Leg4/Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10.2364)
+
+[editable path="Leg"]
+[editable path="Leg2"]
+[editable path="Leg3"]
+[editable path="Leg4"]
