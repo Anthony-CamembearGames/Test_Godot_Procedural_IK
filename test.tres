@@ -1,0 +1,27 @@
+[gd_resource type="SkeletonModificationStack3D" load_steps=2 format=3 uid="uid://d1ftkyooe7xax"]
+
+[sub_resource type="SkeletonModification3DCCDIK" id="SkeletonModification3DCCDIK_6jj3q"]
+target_nodepath = NodePath("../../Node/Target")
+tip_nodepath = NodePath("BoneAttachment3D/Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_name = "Bone"
+joint_data/0/bone_index = 0
+joint_data/0/ccdik_axis = 1
+joint_data/0/enable_joint_constraint = false
+joint_data/1/bone_name = "Bone"
+joint_data/1/bone_index = 0
+joint_data/1/ccdik_axis = 2
+joint_data/1/enable_joint_constraint = false
+joint_data/2/bone_name = "Bone.001"
+joint_data/2/bone_index = 1
+joint_data/2/ccdik_axis = 2
+joint_data/2/enable_joint_constraint = false
+joint_data/3/bone_name = "Bone.002"
+joint_data/3/bone_index = 2
+joint_data/3/ccdik_axis = 2
+joint_data/3/enable_joint_constraint = false
+
+[resource]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification3DCCDIK_6jj3q")

@@ -26,11 +26,11 @@ func _process(delta):
 	var avg_right := (fr_leg.global_position + br_leg.global_position) / 2
 
 	var diff = Vector2(avg_left.x, avg_left.y).angle_to_point(Vector2(avg_right.x, avg_right.y))
-	global_rotation.z = lerp(global_rotation.z, diff, speed * delta)
+	#global_rotation.z = lerp(global_rotation.z, diff, speed * delta)
 	
 	var avg_back := (bl_leg.global_position + br_leg.global_position) / 2
 	var avg_fwd := (fl_leg.global_position + fr_leg.global_position) / 2
 
 	var diff2 = Vector2(avg_fwd.z, avg_fwd.y).angle_to_point(Vector2(avg_back.z, avg_back.y))
-	global_rotation.x = lerp(global_rotation.x, -diff2, speed * delta)
+	#global_rotation.x = lerp(global_rotation.x, -diff2, speed * delta)
 
