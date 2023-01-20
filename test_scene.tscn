@@ -87,7 +87,7 @@ collide_with_areas = true
 transform = Transform3D(-0.23465, -0.361283, 0.902449, 0, 0.928369, 0.371659, -0.97208, 0.08721, -0.217842, 47.8449, 17.0481, 3.69043)
 
 [node name="Spider" parent="." instance=ExtResource("1_vg73f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7793, 5.22889, 23.6383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.38, 5.22889, 22.6808)
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Spider"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.224, 0)
@@ -95,7 +95,7 @@ mesh = SubResource("SphereMesh_kntgx")
 skeleton = NodePath("../../Spider2")
 
 [node name="Spider2" parent="." instance=ExtResource("1_vg73f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7228, 5.22085, -18.7882)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3378, 5.22086, -15.1471)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Spider2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22412, 0)

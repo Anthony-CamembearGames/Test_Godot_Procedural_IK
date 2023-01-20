@@ -26,6 +26,7 @@ joint_data/3/ccdik_axis = 2
 joint_data/3/enable_joint_constraint = false
 
 [sub_resource type="SkeletonModificationStack3D" id="SkeletonModificationStack3D_ltbhr"]
+resource_local_to_scene = true
 enabled = true
 modification_count = 1
 modifications/0 = SubResource("SkeletonModification3DCCDIK_b7r3x")
